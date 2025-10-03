@@ -28,27 +28,36 @@ class GameController {
     }
 
     // GET all or filter
-    public function getAllGames($filters = []) {
-        try {
-            $sql = "SELECT * FROM games";
-            $params = [];
-            if (!empty($filters)) {
-                $conditions = [];
-                foreach($filters as $field => $value) {
+    public function getAllGames($filters = [], $returnOnly = false) {
+    try {
+        $sql = "SELECT * FROM games";
+        $params = [];
+        if (!empty($filters)) {
+            $conditions = [];
+            $allowed = ['id','name','publisher','category','price','rating'];
+            foreach($filters as $field => $value) {
+                if (in_array($field, $allowed)) {
                     $conditions[] = "$field LIKE ?";
                     $params[] = "%$value%";
                 }
+            }
+            if (!empty($conditions)) {
                 $sql .= " WHERE ".implode(" AND ", $conditions);
             }
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute($params);
-            $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            Response::json($games, 200);
-        } catch(PDOException $e) {
-            Response::json(["error"=>"Database error: ".$e->getMessage()],500);
         }
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($params);
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($returnOnly) {
+            return $games; // ส่งกลับให้ index.php handle
+        }
+
+        Response::json($games, 200);
+    } catch(PDOException $e) {
+        Response::json(["error"=>"Database error: ".$e->getMessage()],500);
     }
+}
 
     // POST create
     public function createGame($data) {
