@@ -1,4 +1,4 @@
-<img width="1013" height="578" alt="image" src="https://github.com/user-attachments/assets/52efe107-250b-4f7b-a505-0680347275aa" /># ขั้นตอนการทดลอง
+# ขั้นตอนการทดลอง
 **1.สร้าง Database mygames**  
 <img width="281" height="301" alt="image" src="https://github.com/user-attachments/assets/734297fe-b103-4c50-b87e-a163e9a9e945" />
 
@@ -334,7 +334,7 @@ RewriteRule ^ index.php [QSA,L]
 
 ### การ Error Handle กรณีระบุ URL ไม่ถูกต้อง
 1. Endpoint ไม่ถูกงต้อง
-<img width="1013" height="578" alt="image" src="https://github.com/user-attachments/assets/8f9888a9-6d4f-46ba-ad6e-62abb7c102df" />
+<img width="1013" height="578" alt="image" src="https://github.com/user-attachments/assets/52efe107-250b-4f7b-a505-0680347275aa" />
 
 2. ระบุ ID ไม่ถูกต้อง
 <img width="1254" height="628" alt="image" src="https://github.com/user-attachments/assets/ec8f7c6d-20d5-4aa5-9b54-06667f0017e4" />
