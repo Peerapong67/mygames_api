@@ -2,7 +2,7 @@
 **1.สร้าง Database mygames**  
 <img width="281" height="301" alt="image" src="https://github.com/user-attachments/assets/734297fe-b103-4c50-b87e-a163e9a9e945" />
 
-**2.ทำการสร้างโฟลเดอร์ mygames_api ใน C:\xampp\htdocs\mygames_api**  
+**2.ทำการสร้างโฟลเดอร์ mygames_api ใน C:\xampp\htdocs**  
 <img width="1134" height="608" alt="image" src="https://github.com/user-attachments/assets/b489652e-6517-433e-8944-0948f82e5bf5" />
 
 **3.ทำสร้างโฟลเดอร์ย่อยและไฟล์ในโฟลเดอร์ mygames_api**  
